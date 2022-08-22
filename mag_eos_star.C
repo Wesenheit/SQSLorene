@@ -443,21 +443,6 @@ int core(int i,int num)
   k<<star.mass_b()/msol<<setw(15)<<star.Magn()(0)(0,0,0,0)*mag_unit/1.e13<<setw(15)<<star.get_omega_c()*f_unit/(2*M_PI)<<setw(15)<<star.angu_mom()<<endl;
   k.close();
   wy(fout,star,nt);
-  /*
-  ofstream out1;
-  out1.open("r"+to_string(num)+".txt",ios_base::app);
-  int j = (nt-1)/2 ; 
-  double theta = M_PI / 2 ; 
-  for (int kk=0;kk<nr[0];kk++)
-  {
-    double phi = 2. * kk * M_PI / np ;
-    int l = star.l_surf()(kk, j) ; 
-    double xi = star.xi_surf()(kk, j) ;
-    out1<< mp.val_r(l,xi,theta,phi)<<setw(15);
-  }
-  out1<<endl;
-  out1.close();
-  */
   // Drawings
   // --------
   /*
@@ -535,13 +520,6 @@ int main(int argc, char *argv[])
 {
   int thread_num=atoi(argv[1]);
   int max_it=atoi(argv[2]);
-  /*
-  ofstream out1;
-  out1.open("results.txt");
-  out1<<"R_circ"<< setw(15) << "R_eq" << setw(15) << "R_pole"<< setw(15) 
-  << "M_g"<< setw(15) << "M_b"<< setw(15) << "MM(1e32)"  << setw(15) << "Cent"<<setw(15)<<"RPolar"<<setw(15)<<"Teq"<<setw(15)<<"grv2_err"<<setw(15)<<"grv3_err"<<setw(15);
-  out1<<"number_den"<<setw(15)<<"prop_energy"<<setw(15)<<"pressure"<<endl;
-  out1.close();*/
   MPI_Init(NULL, NULL);
 
   int rank;

@@ -12,9 +12,9 @@ using namespace std;
 #define m (1.66*pow(10,-45))
 #define BC (1.17912*pow(10,19))
 #define la (1.312)
-#define ronum 170
-#define bnum 100
-#define gnum 5
+#define ronum 170 //number of points in rho
+#define bnum 100 //number of points in magnetic field
+#define gnum 5  //number of points in polarization
 long double jmax(double ef,double B)
 {
     return BC*(ef*ef-1)/(2.0*B);
@@ -133,7 +133,6 @@ class war
         }
         double operator()(double a, double b)
         {
-            //if (abs(roo((a+b)/2-0.00001,B)-ro)<0.0001)
             
             if (abs(a-b)<0.00001)
             {
